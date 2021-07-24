@@ -1,0 +1,15 @@
+{% if user %}
+    {{ 'offline.mall::frontend.session.logged_in' | trans({email: user.email}) | escape }}.
+    <span class="ml-4">
+        <a href="javascript:;" data-request="onLogout" data-request-data="redirect: '/'">
+            {{ 'offline.mall::frontend.session.logout' | trans }}
+        </a>
+    </span>
+{% else %}
+    {{ 'offline.mall::frontend.session.logged_out' | trans }}.
+    <span class="ml-4">
+        <a href="{{ '/login' | app }}">
+            {{ 'offline.mall::frontend.session.login_signup' | trans }}
+        </a>
+    </span>
+{% endif %}

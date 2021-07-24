@@ -1,0 +1,14 @@
+<p class="mb-8">
+    {{ 'offline.mall::frontend.password_reset.lead' | trans }}
+</p>
+
+<form
+    data-request="{{ __SELF__ }}::onRestorePassword"
+    data-request-update="'{{ __SELF__ }}::reset': '#partialUserResetForm'">
+    <div class="mall-form-control">
+        <label for="userRestoreEmail">{{ 'offline.mall::frontend.form.email' | trans }}</label>
+        <input name="email" type="email" id="userRestoreEmail" placeholder="{{ 'offline.mall::frontend.form.email' | trans }}">
+    </div>
+
+    <button type="submit" class="mall-btn mall-btn--primary">{{ 'offline.mall::frontend.password_reset.restore' | trans }}</button>
+</form>

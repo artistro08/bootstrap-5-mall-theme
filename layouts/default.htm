@@ -1,0 +1,58 @@
+description = "Default"
+
+[cart]
+showDiscountApplier = 1
+showTaxes = 1
+
+[mallDependencies]
+
+[session]
+security = "all"
+
+[staticPage]
+useContent = 1
+default = 0
+
+[currencyPicker]
+
+[localePicker]
+forceUrl = 1
+
+[enhancedEcommerceAnalytics]
+==
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <title>{{ this.page.title }}</title>
+    {% styles %}
+    <link rel="stylesheet" href="{{ 'assets/main.css' | theme }}">
+    <script src="{{ ['@jquery'] | theme }}"></script>
+    {% component 'enhancedEcommerceAnalytics' %}
+    {% component 'mallDependencies' %}
+</head>
+<body>
+{% partial 'header' %}
+{% partial 'navigation' %}
+
+<main class="container mx-auto py-8">
+    {% page %}
+</main>
+
+{% partial 'footer' %}
+<script src="{{ 'assets/app.js' | theme }}"></script>
+{% framework extras %}
+{% scripts %}
+{% flash %}
+    <script>
+        $(function() {
+            $.oc.flashMsg({type: '{{ type }}', text: '{{ message }}'})
+        })
+    </script>
+{% endflash %}
+</body>
+</html>

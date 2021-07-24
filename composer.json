@@ -1,0 +1,8 @@
+{
+    "name": "artistro08/bootstrap-mall-theme-theme",
+    "type": "october-theme",
+    "description": "Unofficial Bootstrap 5 starter theme for the Mall e-commerce plugin, based on the original Mall Starter theme",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
