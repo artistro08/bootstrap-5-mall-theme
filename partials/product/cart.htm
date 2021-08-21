@@ -4,6 +4,7 @@
       data-request-flash
       id="mall-add-to-cart">
     {% if variants.count > 0 %}
+        <hr>
         <h5 class="mall-product__variants-heading">{{ 'offline.mall::frontend.variants' | trans }}</h5>
         <div class="mall-product__variants">
             {% for value, variant in variants %}
