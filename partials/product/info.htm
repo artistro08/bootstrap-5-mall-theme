@@ -7,7 +7,3 @@
 {% partial __SELF__ ~ '::propertyvalues' images=item.all_images %}
 
 {% partial __SELF__ ~ '::images' images=item.all_images %}
-
-{% if __SELF__.showReviews %}
-    {% component 'productReviews' %}
-{% endif %}
