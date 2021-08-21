@@ -1,7 +1,7 @@
 <select name="props[{{ item.property.hashId }}]"
         id="{{ item.property.hashId }}"
         data-id="{{ item.property.hashId }}"
-        class="js-mall-property-selector"
+        class="js-mall-property-selector form-select"
         data-mall-property>
     {% for value in item.values %}
         <option value="{{ value.hashId }}"

@@ -251,99 +251,6 @@ table {
     }
 }
 
-.mall-btn {
-    font-size: .875rem;
-    display: inline;
-    background-color: #fff;
-    color: #364349;
-    padding: .75rem 1.5rem;
-    border-width: 1px;
-    border-color: #dae4e9;
-    border-radius: .25rem;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
-    text-align: center;
-    cursor: pointer;
-    text-decoration: none;
-    white-space: nowrap;
-    min-height: 42px
-}
-
-.mall-btn:hover {
-    background-color: #f3f7f9
-}
-
-.mall-btn--primary {
-    background-color: #103d60;
-    border-color: #144b76;
-    color: #fff
-}
-
-.mall-btn--primary:hover {
-    background-color: #144b76
-}
-
-.mall-btn--secondary {
-    background-color: #ef7204;
-    border-color: #ef5c12;
-    color: #fff
-}
-
-.mall-btn--secondary:hover {
-    background-color: #ef5c12
-}
-
-.mall-btn--link {
-    display: inline-block;
-    vertical-align: baseline;
-    font-weight: 700;
-    font-size: .875rem;
-    color: #3490dc;
-    box-shadow: none;
-    border-width: 0
-}
-
-.mall-btn--link:hover {
-    color: #103d60;
-    background-color: transparent
-}
-
-.mall-btn--text {
-    display: inline-block;
-    vertical-align: baseline;
-    font-size: .875rem;
-    color: #9babb4;
-    box-shadow: none;
-    border-width: 0;
-    padding: 0;
-    margin: 0;
-    font-size: .75rem
-}
-
-.mall-btn--text:hover {
-    color: #103d60;
-    background-color: transparent
-}
-
-.mall-btn--full {
-    width: 100%
-}
-
-.mall-btn--disabled, .mall-btn[disabled] {
-    background-color: #9babb4;
-    border-color: #70818a;
-    cursor: no-drop
-}
-
-.mall-btn--disabled:hover, .mall-btn[disabled]:hover {
-    background-color: #9babb4
-}
-
-.mall-btn--sm {
-    padding: .5rem 1rem;
-    font-size: .75rem;
-    min-height: 0
-}
-
 .mall-selectbox {
     padding: .75rem 2rem .75rem .5rem
 }
@@ -424,25 +331,6 @@ table {
     font-size: .75rem;
     font-weight: 700;
     margin-bottom: .5rem
-}
-
-.mall-form-control input, .mall-form-control textarea {
-    display: block;
-    padding: .75rem 1rem;
-    margin-bottom: .75rem;
-    min-height: 42.6px
-}
-
-.mall-form-control input, .mall-form-control textarea {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 100%;
-    background-color: #f3f7f9;
-    color: #596a73;
-    border-width: 1px;
-    border-color: #f3f7f9;
-    border-radius: .25rem
 }
 
 .mall-form-checkbox {
@@ -956,12 +844,6 @@ a {
     margin-bottom: .25rem
 }
 
-.mall-product__current-price {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #222b2f
-}
-
 .mall-product__tax-info {
     font-size: .75rem;
     color: #9babb4;
@@ -980,34 +862,6 @@ a {
     border-top-width: 1px;
     border-color: #f1f6f8;
     padding-top: 2rem
-}
-
-.mall-add-to-cart-button {
-    font-size: .875rem;
-    display: inline;
-    background-color: #fff;
-    color: #364349;
-    border-width: 1px;
-    border-radius: .25rem;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
-    text-align: center;
-    cursor: pointer;
-    text-decoration: none;
-    white-space: nowrap;
-    min-height: 42px;
-    width: 100%;
-    display: block;
-    background-color: #3490dc;
-    border-color: #2779bd;
-    color: #fff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .12), 0 2px 4px 0 rgba(0, 0, 0, .08);
-    padding: .75rem 1.5rem;
-    font-size: 1rem;
-    margin-top: 1rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    transition: background .1s ease;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, .3)
 }
 
 .mall-add-to-cart-button:hover {
