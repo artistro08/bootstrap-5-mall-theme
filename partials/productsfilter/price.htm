@@ -1,9 +1,10 @@
 {% if not __SELF__.priceRange == false %}
     <div class="mall-property-group">
-        <div class="mall-property-group__name mall-property-group__name--price">
+        <p class="mall-property-group__name mall-property-group__name--price">
             <div>{{ 'offline.mall::frontend.price' | trans }}</div>
             {% partial __SELF__ ~ '::clearfilter' id='price' %}
-        </div>
+        </p>
+        <hr>
         <div class="mall-property">
             {% partial __SELF__ ~ '::range'
                 id  = 'price'
