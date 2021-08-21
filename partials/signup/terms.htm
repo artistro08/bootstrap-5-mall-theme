@@ -1,15 +1,14 @@
-<div class="mall-signup-terms">
-    <label class="mall-checkbox">
-        <input class="js-mall-toggle-signup-terms"
-               type="checkbox"
-               name="terms_accepted"
-               value="1"
-        >
-        <span>
-            {% partial __SELF__ ~ '::termslabel' %}
-            <div data-validate-for="terms_accepted"></div>
-        </span>
+<div class="mall-signup-terms form-check">
+    <label class="mall-checkbox form-check-label js-mall-toggle-signup-terms" for="terms_accepted">
+        {% partial __SELF__ ~ '::termslabel' %}
+        <div data-validate-for="terms_accepted"></div>
     </label>
+    <input class="js-mall-toggle-signup-terms form-check-input"
+           type="checkbox"
+           name="terms_accepted"
+           value="1"
+            id="terms_accepted"
+    >
 </div>
 
 {% put scripts %}

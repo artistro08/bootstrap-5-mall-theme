@@ -323,16 +323,6 @@ table {
     width: 100%
 }
 
-.mall-form-control label {
-    display: block;
-    text-transform: uppercase;
-    letter-spacing: .05em;
-    color: #596a73;
-    font-size: .75rem;
-    font-weight: 700;
-    margin-bottom: .5rem
-}
-
 .mall-form-checkbox {
     margin-bottom: 1.5rem;
     width: 100%
@@ -356,44 +346,6 @@ table {
 
 .mall-form-actions .mall-btn + .mall-btn {
     margin-left: 1rem
-}
-
-.mall-two-fields {
-    display: -ms-flexbox;
-    display: flex;
-    margin-bottom: 1.5rem
-}
-
-.mall-two-fields .mall-form-control, .mall-two-fields input {
-    margin-bottom: 0
-}
-
-.mall-two-fields > :first-child {
-    -ms-flex: 50% 0;
-    flex: 50% 0;
-    margin-right: .5rem
-}
-
-.mall-two-fields > :last-child {
-    -ms-flex: 50% 0;
-    flex: 50% 0;
-    margin-left: .5rem
-}
-
-.mall-checkbox {
-    display: block;
-    color: #70818a;
-    font-weight: 700;
-    text-indent: -27px;
-    padding-left: 27px
-}
-
-.mall-checkbox > input {
-    margin-right: .5rem
-}
-
-.mall-checkbox > span {
-    font-size: .875rem
 }
 
 .mall-form-comment {
@@ -1172,59 +1124,6 @@ a {
     padding: 10px 0 0
 }
 
-.mall-signup {
-    display: -ms-flexbox;
-    display: flex;
-    width: 80%;
-    margin: auto
-}
-
-.mall-signup__signin, .mall-signup__signup {
-    width: 50%;
-    border-width: 1px;
-    border-color: #f1f6f8;
-    border-radius: .25rem;
-    padding: 2rem;
-    -ms-flex-item-align: start;
-    align-self: flex-start
-}
-
-.mall-signup__heading {
-    margin-bottom: 1.5rem;
-    line-height: 1.5
-}
-
-.mall-signup__subheading {
-    margin-bottom: 1rem;
-    margin-top: .5rem;
-    line-height: 1.5
-}
-
-.mall-signup__signin {
-    margin-right: 1rem
-}
-
-.mall-signup__signup {
-    margin-left: 1rem
-}
-
-.mall-signup__guest-option, .mall-signup__shipping-address-option {
-    margin-bottom: 2rem;
-    margin-top: -.5rem
-}
-
-.mall-signup .mall-form-actions .mall-btn--primary {
-    font-size: 1rem
-}
-
-.mall-signup-terms {
-    background-color: #f3f7f9;
-    padding: 1.5rem;
-    border-radius: .25rem;
-    border-width: 1px;
-    border-color: #dae4e9
-}
-
 .mall-payment-method {
     margin-top: 1rem
 }
@@ -1510,19 +1409,6 @@ a {
 .mall-shipping-method [data-validate-for] {
     margin-bottom: 1rem;
     margin-top: 0
-}
-
-.mall-shipping-method .mall-two-fields--number-cvv {
-    display: -ms-flexbox;
-    display: flex
-}
-
-.mall-shipping-method .mall-two-fields--number-cvv .mall-form-control:first-child {
-    width: 75%
-}
-
-.mall-shipping-method .mall-two-fields--number-cvv .mall-form-control:last-child {
-    width: 25%
 }
 
 .mall-address-selector label {
