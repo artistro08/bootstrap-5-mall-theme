@@ -372,19 +372,6 @@ table {
     min-width: 60px
 }
 
-.mall-label {
-    text-transform: uppercase;
-    letter-spacing: .05em;
-    font-size: .75rem;
-    font-weight: 700;
-    margin-bottom: .5rem
-}
-
-.mall-label {
-    display: block;
-    color: #596a73
-}
-
 
 .mall-input-sm {
     padding: .5rem .75rem;
@@ -446,7 +433,7 @@ table {
     min-height: 42.6px
 }
 
-.mall-form-control input, .mall-form-control select, .mall-form-control textarea {
+.mall-form-control input, .mall-form-control textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -456,16 +443,6 @@ table {
     border-width: 1px;
     border-color: #f3f7f9;
     border-radius: .25rem
-}
-
-.mall-form-control select {
-    font-size: .875rem;
-    padding: .75rem 2rem .75rem .5rem;
-    background-image: url(dropdown.svg);
-    background-repeat: no-repeat;
-    background-size: 1.5em 1.5em;
-    background-position: right 1em top 50%;
-    cursor: pointer
 }
 
 .mall-form-checkbox {
@@ -1212,13 +1189,6 @@ a {
     font-size: .875rem
 }
 
-.mall-products-item {
-    width: 33.33333%;
-    padding-bottom: 1.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-size: .875rem
-}
 
 .mall-products-item a {
     color: inherit;
@@ -1229,20 +1199,9 @@ a {
     padding-top: .25rem
 }
 
-.mall-products-item__image, .mall-products-item__info-primary, .mall-products-item__info-secondary {
+.mall-products-item__info-primary, .mall-products-item__info-secondary {
     display: -ms-flexbox;
     display: flex
-}
-
-.mall-products-item__image {
-    border-bottom-width: 1px;
-    border-color: #dae4e9;
-    height: 240px;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    color: transparent
 }
 
 .mall-products-item__image img {
@@ -1358,13 +1317,6 @@ a {
     text-decoration: none
 }
 
-.mall-products-filter .mall-filter {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap
-}
-
 .mall-products-filter .mall-filter__option {
     padding: .5rem;
     margin-right: .5rem;
@@ -1374,11 +1326,6 @@ a {
     text-align: center;
     font-size: .875rem;
     min-width: 40px
-}
-
-.mall-products-filter .mall-filter__option--selected:not(.mall-label--checkbox) {
-    background-color: #103d60;
-    color: #fff
 }
 
 .mall-products-filter .noUi-connect {
@@ -11329,4 +11276,9 @@ a {
     .xl\:w-screen {
         width: 100vw
     }
+}
+
+/* My Code */
+.section {
+    padding: 1rem;
 }
