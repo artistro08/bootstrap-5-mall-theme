@@ -1,0 +1,58 @@
+{% put scripts %}
+    <script>
+        $(function () {
+            var $body = $('body');
+
+            $.subscribe('mall.discount.applied', refreshCart);
+            $.subscribe('mall.shipping.update', refreshCart);
+            $.subscribe('mall.address.update', refreshCart);
+
+            function refreshCart () {
+                $.request('{{ __SELF__ }}::onRun', {
+                    update: {'{{ __SELF__ }}::cart': '.mall-cart'},
+                })
+            }
+
+            $body.on('change', '.js-mall-quantity', function () {
+                $.request('{{ __SELF__ }}::onUpdateQuantity', {
+                    data: {id: this.dataset.id, quantity: this.value},
+                    update: {'{{ __SELF__ }}::cart': '.mall-cart'},
+                    loading: $.oc.stripeLoadIndicator,
+                    flash: true,
+                    success: function (data) {
+                        this.success(data)
+                        $.publish('mall.cart.update', data)
+                    },
+                    handleFlashMessage: function (message, type) {
+                        $.oc.flashMsg({text: message, class: type})
+                    }
+                })
+            });
+            $body.on('click', '.js-mall-remove-product', function () {
+                $.request('{{ __SELF__ }}::onRemoveProduct', {
+                    data: {id: this.dataset.id},
+                    update: {'{{ __SELF__ }}::cart': '.mall-cart'},
+                    loading: $.oc.stripeLoadIndicator,
+                    confirm: '{{ 'offline.mall::frontend.confirm' | trans }}',
+                    success: function (data) {
+                        this.success(data)
+                        $.publish('mall.cart.update', data)
+                        $.publish('mall.cart.productRemoved', data)
+                    }
+                })
+            });
+            $body.on('click', '.js-mall-remove-discount-code', function () {
+                $.request('{{ __SELF__ }}::onRemoveDiscountCode', {
+                    data: {id: this.dataset.id},
+                    update: {'{{ __SELF__ }}::cart': '.mall-cart'},
+                    loading: $.oc.stripeLoadIndicator,
+                    confirm: '{{ 'offline.mall::frontend.confirm' | trans }}',
+                    success: function (data) {
+                        this.success(data)
+                        $.publish('mall.cart.update', data)
+                    }
+                })
+            });
+        })
+    </script>
+{% endput %}

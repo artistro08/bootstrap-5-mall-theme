@@ -1,0 +1,10 @@
+{% partial __SELF__ ~ '::summary' %}
+
+{% component 'cart' %}
+
+{% partial __SELF__ ~ '::confirminfo' %}
+{% partial __SELF__ ~ '::actions' %}
+
+{% if __SELF__.dataLayer %}
+    {% partial __SELF__ ~ '::datalayer' %}
+{% endif %}

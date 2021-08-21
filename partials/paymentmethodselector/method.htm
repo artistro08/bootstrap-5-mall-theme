@@ -1,0 +1,60 @@
+{% set isActiveMethod = __SELF__.activeMethod.id == method.id %}
+<div class="mall-payment-method__entry js-mall-select-payment-method
+     {{ isActiveMethod ? 'mall-payment-method__entry--active' : '' }}"
+     data-id="{{ method.id }}">
+    <div class="mall-payment-method__logo">
+        {% if method.logo %}
+            <img class="mall-payment-method__logo" src="{{ method.logo.thumb(120, 'auto') }}" alt=""/>
+        {% endif %}
+    </div>
+    <div class="mall-payment-method__text">
+        <div>
+            <div class="mall-payment-method__heading">
+                <div class="mall-payment-method__name">{{ method.name }}</div>
+            </div>
+            {% if method.description %}
+                <div class="mall-payment-method__description">
+                    {{ method.description | raw }}
+                </div>
+            {% endif %}
+            {% if isActiveMethod %}
+                <div class="mall-payment-method__instructions">
+                    {{ method.renderInstructions(__SELF__.order, __SELF__.cart) | raw }}
+                </div>
+                <div class="mall-payment-method__toggle"
+                     style="{% if not isActiveMethod %}display: none{% endif %}">
+                    <div class="mall-payment-method__data">
+                        {% if method.payment_provider %}
+                            {{ __SELF__.renderPaymentForm() | raw }}
+                        {% endif %}
+                    </div>
+                    {% set customerMethods = __SELF__.customerMethods[method.id] %}
+                    {% if customerMethods %}
+                        <div class="mall-payment-method__customer-methods">
+                            {% partial __SELF__ ~ '::customermethods' methods=customerMethods %}
+                        </div>
+                    {% endif %}
+                    <div class="mall-payment-method__submit">
+                        {% set label = __SELF__.order
+                            ? 'offline.mall::frontend.payment_method.pay_now'
+                            : 'offline.mall::frontend.payment_method.proceed' %}
+                        <button class="mall-btn mall-btn--primary" type="submit" data-attach-loading>
+                            {{ label | trans }}
+                        </button>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="mall-payment-method__selector">
+        {% if not isActiveMethod %}
+            <button class="mall-payment-method__select-button"
+                    data-attach-loading
+                    data-request="{{ __SELF__ }}::onChangeMethod"
+                    data-request-success="$.publish('mall.cart.paymentMethodChanged', data)"
+                    data-request-data="id: '{{ method.id }}'">
+                {{ 'offline.mall::frontend.payment_method.button_label' | trans }}
+            </button>
+        {% endif %}
+    </div>
+</div>
