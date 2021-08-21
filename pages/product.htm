@@ -37,9 +37,15 @@ function onStart() {
 }
 ==
 
-{% component 'product' %}
-<h2>Other products from this category</h2>
-{% component 'relatedProducts' %}
+<div class="section">
+    <div class="container">
+        {% component 'product' %}
+
+        <h2>Other products from this category</h2>
+        {% component 'relatedProducts' %}
+    </div>
+</div>
+
 {% put styles %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.2/jquery.fancybox.min.css">
 {% endput %}

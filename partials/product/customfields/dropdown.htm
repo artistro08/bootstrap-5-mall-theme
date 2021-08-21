@@ -1,0 +1,13 @@
+<div class="mall-form-control">
+    <label for="field-{{ field.hashId }}" class="mall-label">{{ field.name }}</label>
+    <select class="mall-input" id="field-{{ field.hashId }}"
+            name="fields[{{ field.hashId }}]"
+            data-id="{{ item.property.hashId }}"
+            data-mall-custom-field>
+        <option value="">{{ 'offline.mall::frontend.select' | trans }}</option>
+        {% for option in field.custom_field_options %}
+            <option value="{{ option.hashId }}">{{ option.name }}</option>
+        {% endfor %}
+    </select>
+    <div data-validate-for="{{ field.hashId }}"></div>
+</div>

@@ -1,0 +1,11 @@
+{% if images %}
+    <div class="mall-product__images row no-gutters">
+        {% for image in images %}
+            <a class="mall-product__image card col-4 me-2 p-0" href="{{ image.path }}"
+               data-fancybox="product"
+               data-caption="{{ image.title }}">
+                <img src="{{ image.thumb(240, 240, 'crop') }}" alt="{{ image.title }}" class="card-img w-100 img-fluid"/>
+            </a>
+        {% endfor %}
+    </div>
+{% endif %}
