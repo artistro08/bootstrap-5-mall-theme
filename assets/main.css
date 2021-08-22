@@ -414,35 +414,6 @@ a {
     color: #364349
 }
 
-.mall-switcher__outer {
-    display: inline-block
-}
-
-.mall-switcher, .mall-switcher__item {
-    display: -ms-flexbox;
-    display: flex
-}
-
-.mall-switcher__item {
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    padding: .5rem 2rem;
-    font-weight: 400;
-    white-space: nowrap;
-    border: 1px solid #efefef;
-    border-left-width: 0;
-    text-decoration: none
-}
-
-.mall-switcher__item--active, .mall-switcher__item:hover {
-    background: #eee
-}
-
-.mall-switcher__item:first-child {
-    border-left-width: 1px;
-    border-radius: 4px 0 0 4px
-}
-
 .mall-switcher__item:last-child {
     border-radius: 0 4px 4px 0
 }
@@ -1505,10 +1476,6 @@ a {
     display: flex
 }
 
-.mall-my-account__nav {
-    width: 20%
-}
-
 .mall-my-account__content {
     width: 80%;
     padding-left: 2rem
@@ -1516,30 +1483,6 @@ a {
 
 .mall-my-account__content h2 {
     margin-bottom: 2rem
-}
-
-.mall-my-account__nav-item {
-    padding: .75rem .5rem;
-    color: #222b2f;
-    cursor: pointer
-}
-
-.mall-my-account__nav-item a {
-    color: #70818a;
-    text-decoration: none;
-    display: block
-}
-
-.mall-my-account__nav-item:hover:not(.mall-my-account__nav-item--active) {
-    background-color: #f6fbfd
-}
-
-.mall-my-account__nav-item--active {
-    background-color: #dae4e9
-}
-
-.mall-my-account__nav-item--active a {
-    color: #222b2f
 }
 
 .mall-orders-list__order {
