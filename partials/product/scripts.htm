@@ -1,0 +1,59 @@
+{% put scripts %}
+    <script>
+        $(function () {
+            var $body = $('body');
+            var $form = $('#mall-add-to-cart');
+            var $addToCart = $('.mall-product__add-to-cart');
+
+            $body.on('change', '.js-mall-property-selector', function (e, isInitial) {
+                var values = $('[data-mall-property]').map(function () {
+                    return this.value;
+                }).toArray();
+
+                var props = {}
+                $('[data-mall-custom-field]').map(function () {
+                    if (this.type === 'checkbox' && !this.checked) {
+                        return
+                    }
+                    return props[this.dataset.id] = this.value
+                });
+
+                $addToCart.html('<div class="mall-product__property-stock mall-product__property-stock--checking">{{ 'offline.mall::frontend.stock.checking' | trans }}</div>');
+
+                $.request('onChangeProperty', {
+                    data: {values: values, props: props, initial: isInitial},
+                    loading: isInitial ? null : $.oc.stripeLoadIndicator
+                })
+            })
+            var firstProperty = $('.js-mall-property-selector:first')
+            if (firstProperty.length) {
+                firstProperty.trigger('change', true)
+            } else {
+                {#
+                   In case the product has no special properties we simply check the stock once
+                   since nothing can be configured afterwards.
+                #}
+                $.request('onCheckProductStock', {
+                    data: {slug: '{{ item.slug }}'},
+                    loading: null
+                })
+            }
+
+            {# Handle clicks on the image selector for custom field type "image" and "color" #}
+            $body.on('click', '.mall-option-selector', function () {
+                $(this.dataset.target).val(this.dataset.value).trigger('change');
+
+                $(this).parent().find('.is-active').removeClass('is-active');
+                $(this).addClass('is-active');
+            });
+
+            {# Reload pricing information when a custom field is changed #}
+            $body.on('change', '[data-mall-custom-field]', function () {
+                $.request('onChangeConfiguration', {
+                    form: $form,
+                    loading: $.oc.stripeLoadIndicator
+                })
+            });
+        })
+    </script>
+{% endput %}

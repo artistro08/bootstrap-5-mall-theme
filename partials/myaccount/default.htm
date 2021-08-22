@@ -1,0 +1,26 @@
+<div class="mall-my-account row">
+    <div class="col-12 col-lg-3">
+        <nav class="mall-my-account__nav nav nav-pills flex-column">
+            <div class="mall-my-account__nav-item nav-item
+                {{ __SELF__.currentPage == 'orders' ? 'mall-my-account__nav-item--active' : '' }}">
+                <a class="nav-link {{ __SELF__.currentPage == 'orders' ? 'active' : '' }}" href="{{ __SELF__.pageUrl('orders') }}">{{ 'offline.mall::frontend.orders' | trans }}</a>
+            </div>
+            <div class="mall-my-account__nav-item nav-item
+                {{ __SELF__.currentPage == 'profile' ? 'mall-my-account__nav-item--active' : '' }}">
+                <a class="nav-link {{ __SELF__.currentPage == 'profile' ? 'active' : '' }}" href="{{ __SELF__.pageUrl('profile') }}">{{ 'offline.mall::frontend.profile' | trans }}</a>
+            </div>
+            <div class="mall-my-account__nav-item nav-item
+                {{ __SELF__.currentPage == 'addresses' ? 'mall-my-account__nav-item--active' : '' }}">
+                <a class="nav-link {{ __SELF__.currentPage == 'addresses' ? 'active' : '' }}" href="{{ __SELF__.pageUrl('addresses') }}">{{ 'offline.mall::frontend.addresses' | trans }}</a>
+            </div>
+            <div class="mall-my-account__nav-item nav-item">
+                <a class="nav-link" href="javascript:;" data-request="onLogout" data-request-data="redirect: '/'">
+                    {{ 'offline.mall::frontend.session.logout' | trans }}
+                </a>
+            </div>
+        </nav>
+    </div>
+    <div class="mall-my-account__content col-12 col-lg-9">
+        {% partial __SELF__ ~ ('::pages/' ~ __SELF__.currentPage) %}
+    </div>
+</div>

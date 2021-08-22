@@ -31,6 +31,7 @@ forceUrl = 1
     <title>{{ this.page.title }}</title>
     {% styles %}
     <link rel="stylesheet" href="{{ 'assets/main.css' | theme }}">
+    <link rel="stylesheet" href="{{ 'assets/bootstrap/css/bootstrap.css' | theme }}">
     <script src="{{ ['@jquery'] | theme }}"></script>
     {% component 'enhancedEcommerceAnalytics' %}
     {% component 'mallDependencies' %}
@@ -45,6 +46,7 @@ forceUrl = 1
 
 {% partial 'footer' %}
 <script src="{{ 'assets/app.js' | theme }}"></script>
+<script src="{{ 'assets/bootstrap/js/bootstrap.bundle.js' | theme }}"></script>
 {% framework extras %}
 {% scripts %}
 {% flash %}

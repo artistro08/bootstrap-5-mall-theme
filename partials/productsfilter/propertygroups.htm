@@ -1,0 +1,17 @@
+{% if __SELF__.showBrandFilter %}
+    {% partial __SELF__ ~ '::brands' %}
+{% endif %}
+{% if __SELF__.showPriceFilter or __SELF__.showOnSaleFilter %}
+    {% partial __SELF__ ~ '::price' %}
+{% endif %}
+{% partial __SELF__ ~ '::labels' %}
+{% for group in groups %}
+    <div class="mall-property-group">
+        <p class="mall-property-group__name">{{ group.display_name }}</p>
+        <hr>
+        {% if group.description %}
+            <div class="mall-property-group__description">{{ group.description }}</div>
+        {% endif %}
+        {% partial __SELF__ ~ '::properties' props=group.filterable_properties %}
+    </div>
+{% endfor %}
