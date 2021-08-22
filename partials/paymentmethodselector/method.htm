@@ -38,7 +38,7 @@
                         {% set label = __SELF__.order
                             ? 'offline.mall::frontend.payment_method.pay_now'
                             : 'offline.mall::frontend.payment_method.proceed' %}
-                        <button class="mall-btn mall-btn--primary" type="submit" data-attach-loading>
+                        <button class="mall-btn mall-btn--primary btn btn-primary" type="submit" data-attach-loading>
                             {{ label | trans }}
                         </button>
                     </div>
@@ -48,7 +48,7 @@
     </div>
     <div class="mall-payment-method__selector">
         {% if not isActiveMethod %}
-            <button class="mall-payment-method__select-button"
+            <button class="mall-payment-method__select-button btn btn-primary shadow"
                     data-attach-loading
                     data-request="{{ __SELF__ }}::onChangeMethod"
                     data-request-success="$.publish('mall.cart.paymentMethodChanged', data)"

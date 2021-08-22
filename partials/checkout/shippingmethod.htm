@@ -12,7 +12,7 @@
 
 {% if not __SELF__.cart.is_virtual %}
     <p class="mall-cart-summary__action">
-        <a href="{{ __SELF__.stepUrl('shipping') }}">
+        <a class="btn btn-sm btn-outline-primary" href="{{ __SELF__.stepUrl('shipping') }}">
             {{ 'offline.mall::frontend.change' | trans }}
         </a>
     </p>

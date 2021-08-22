@@ -1,10 +1,10 @@
 {% set url = (productPage | page({slug: product.data.slug, variant: product.variant.hashId})) %}
 {% set image = product.variant ? product.variant.image : product.data.image %}
 <tr class="mall-cart__product">
-    <td>
+    <td class="text-center">
         {% if image %}
             <a href="{{ url }}">
-                <img src="{{ image.thumb(100, auto) }}" alt=""/>
+                <img class="mall-cart-image" src="{{ image.thumb(400, 400, 'crop') }}" alt="{{ image.title }}"/>
             </a>
         {% endif %}
     </td>
@@ -26,7 +26,7 @@
         {% endif %}
         <div>
             <a href="javascript:;"
-               class="js-mall-remove-product"
+               class="js-mall-remove-product text-danger"
                data-id="{{ product.hashId }}"
             >
                 {{ 'offline.mall::frontend.remove' | trans }}
