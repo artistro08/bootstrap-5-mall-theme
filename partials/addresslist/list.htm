@@ -20,12 +20,12 @@
                     <div class="mall-switcher btn-group">
                         <a href="javascript:;" data-request="onChangeDefaultBillingAddress"
                            data-request-data="id: '{{ address.hashId }}'"
-                           class="mall-switcher__item btn btn-primary {{ __SELF__.defaultBillingAddressId == address.id ? 'mall-switcher__item--active active' }}">
+                           class="mall-switcher__item btn btn-outline-primary {{ __SELF__.defaultBillingAddressId == address.id ? 'mall-switcher__item--active active' }}">
                             {{ 'offline.mall::frontend.billing_address' | trans }}
                         </a>
                         <a href="javascript:;" data-request="onChangeDefaultShippingAddress"
                            data-request-data="id: '{{ address.hashId }}'"
-                           class="mall-switcher__item btn btn-primary {{ __SELF__.defaultShippingAddressId == address.id ? 'mall-switcher__item--active active' }}">
+                           class="mall-switcher__item btn btn-outline-primary {{ __SELF__.defaultShippingAddressId == address.id ? 'mall-switcher__item--active active' }}">
                             {{ 'offline.mall::frontend.shipping_address' | trans }}
                         </a>
                     </div>
