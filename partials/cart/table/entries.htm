@@ -1,15 +1,15 @@
 <div class="mall-cart__wrapper">
-    <div class="mall-table-overflow" style="overflow-y: auto">
-        <table class="mall-cart__table">
-            <thead>
+    <div class="mall-table-overflow table-responsive" style="overflow-y: auto">
+        <table class="mall-cart__table table table-bordered table-striped table-responsive-stack">
+            <thead class="d-none d-md-table-cell">
                 {% partial __SELF__ ~ '::table/header' %}
             </thead>
-            <tbody>
+            <tbody class="align-middle">
                 {% for product in cart.products %}
                     {% partial __SELF__ ~ '::table/entry' product=product %}
                 {% endfor %}
             </tbody>
-            <tfoot>
+            <tfoot class="align-middle">
                 {% partial __SELF__ ~ '::table/total'      totals=cart.totals %}
                 {% partial __SELF__ ~ '::table/discounts'  discounts=cart.totals.appliedDiscounts %}
                 {% partial __SELF__ ~ '::table/shipping'   shipping=cart.totals.shippingTotal %}

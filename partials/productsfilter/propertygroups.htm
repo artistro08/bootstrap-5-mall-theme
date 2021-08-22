@@ -7,7 +7,8 @@
 {% partial __SELF__ ~ '::labels' %}
 {% for group in groups %}
     <div class="mall-property-group">
-        <div class="mall-property-group__name">{{ group.display_name }}</div>
+        <p class="mall-property-group__name">{{ group.display_name }}</p>
+        <hr>
         {% if group.description %}
             <div class="mall-property-group__description">{{ group.description }}</div>
         {% endif %}

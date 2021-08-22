@@ -11,6 +11,7 @@
     <label for="{{ id }}">{{ 'offline.mall::frontend.form.country' | trans }}</label>
     {{ form_select_country(id, countryId, {
         id: id,
+        'class': 'form-select',
         emptyOption: ('offline.mall::frontend.select' | trans ),
         'data-request': 'onInit',
         'data-request-update': {
@@ -27,6 +28,7 @@
         {{ form_select_state(id, countryId, stateId, {
             emptyOption: ('offline.mall::frontend.select' | trans ),
             id: id,
+            'class': 'form-select',
         }) }}
         <div data-validate-for="{{ id }}"></div>
     </div>

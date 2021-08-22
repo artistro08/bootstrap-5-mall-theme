@@ -1,0 +1,20 @@
+<div class="mall-product row">
+    <div class="mall-product__info col-12 col-lg-8">
+        {% partial __SELF__ ~ '::info' %}
+    </div>
+    <div class="mall-product__cart col-12 col-lg-4">
+        {% partial __SELF__ ~ '::title' %}
+        {% partial __SELF__ ~ '::cart' %}
+    </div>
+    <div class="mall-product__info-reviews col-12">
+        {% if __SELF__.showReviews %}
+            {% component 'productReviews' %}
+        {% endif %}
+    </div>
+</div>
+
+{% partial __SELF__ ~ '::scripts' %}
+
+{% if __SELF__.dataLayer %}
+    {% partial __SELF__ ~ '::datalayer' %}
+{% endif %}
